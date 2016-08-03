@@ -23,4 +23,21 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-});
+})
+
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+
+      .state('app.sessions', {
+        url: "/sessions",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/sessions.html",
+                controller: 'SessionsCtrl'
+            }
+        }
+      });
+
+// if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/welcome22');
+  });
